@@ -6,18 +6,6 @@ import {Button} from 'react-bootstrap';
 
 export const SimpleMap = () => {
 
-    const style = {
-        position: 'absolute',
-       width: '100px',
-        
-        border: '4px solid #eef4f9;',
-        backgroundColor: 'white',
-        textAlign: 'center',
-        color: '#3f51b5',
-        fontSize: 13,
-        fontWeight: 'bold',
-        padding: 4
-      };
       const centers = {lat:9.0546462,lng:7.2542662}
     const zoom = 12
 
@@ -31,15 +19,8 @@ export const SimpleMap = () => {
       setDetail(!detail)
    }
 
-    const AnyReactComponent = ({ text }) => <div style={style} onClick={details}>{text}</div>;
+   const AnyReactComponent = ({ text }) => <div className="tag-location" onClick={details}>{text}</div>;
 
-   
-
-    
-    // useEffect(()=>{
-
-       
-    // },[])
 
     const locateMe = () => {
       if (navigator && navigator.geolocation) {
@@ -49,7 +30,7 @@ export const SimpleMap = () => {
             lat:coords.latitude,
             lng:coords.longitude
           }
-          console.log(coords)
+          
                 setCenter(location)
               setLat(coords.latitude)
               setLng(coords.longitude)
